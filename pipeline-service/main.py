@@ -11,7 +11,7 @@ app = FastAPI()
 Base.metadata.create_all(bind=engine)
 
 
-# ✅ Serializer (clean response)
+# Serializer 
 def serialize(customer):
     return {
         "customer_id": customer.customer_id,
@@ -70,7 +70,7 @@ def get_customers(page: int = 1, limit: int = 10):
     }
 
 
-# 🔥 GET SINGLE CUSTOMER
+# GET SINGLE CUSTOMER
 @app.get("/api/customers/{customer_id}")
 def get_customer(customer_id: str):
     db = SessionLocal()
